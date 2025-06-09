@@ -1,0 +1,221 @@
+*.log
+.DS_Store
+.env
+.env.backup
+.env.production
+.phpactor.json
+.phpunit.result.cache
+/.fleet
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
+/auth.json
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/vendor
+Homestead.json
+Homestead.yaml
+npm-debug.log
+Thumbs.db
+yarn-error.log
+
+# ==============================================================================
+# Laravel Project .gitignore
+# ==============================================================================
+
+# Laravel Framework
+# ------------------
+/bootstrap/compiled.php
+/bootstrap/cache/*
+!/bootstrap/cache/.gitkeep
+
+# Vendor Dependencies
+# -------------------
+/vendor/
+composer.phar
+
+# Node.js Dependencies
+# --------------------
+/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment & Configuration
+# ---------------------------
+.env
+.env.*
+!.env.example
+.phpunit.result.cache
+
+# Laravel Specific Files
+# ----------------------
+/storage/app/*
+!/storage/app/.gitkeep
+!/storage/app/public/
+/storage/framework/cache/*
+!/storage/framework/cache/.gitkeep
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitkeep
+/storage/framework/testing/*
+!/storage/framework/testing/.gitkeep
+/storage/framework/views/*
+!/storage/framework/views/.gitkeep
+/storage/logs/*
+!/storage/logs/.gitkeep
+
+# Public Assets (compiled)
+# ------------------------
+/public/hot
+/public/storage
+/public/build
+/public/mix-manifest.json
+/public/js/
+/public/css/
+!/public/js/.gitkeep
+!/public/css/.gitkeep
+
+# Laravel Mix / Vite
+# ------------------
+mix-manifest.json
+.vite.config.js.timestamp-*
+
+# IDE & Editor Files
+# ------------------
+# PhpStorm
+.idea/
+*.iml
+*.iws
+
+# VSCode
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# NetBeans
+nbproject/
+
+# Eclipse
+.buildpath
+.project
+.settings/
+
+# Operating System Files
+# ----------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.nfs*
+
+# Development & Debug Files
+# -------------------------
+# Xdebug
+xdebug.log
+
+# PHPUnit
+phpunit.xml
+/coverage/
+.phpunit.cache
+
+# Laravel Telescope
+telescope-toolbar.js
+
+# Laravel Horizon
+horizon.log
+
+# Database
+# --------
+*.sqlite
+*.sqlite3
+database/*.sqlite
+database/*.sqlite3
+
+# Logs & Temporary Files
+# ----------------------
+*.log
+*.tmp
+*.temp
+error_log
+access_log
+
+# Backup Files
+# ------------
+*.bak
+*.backup
+*.sql
+*.dump
+
+# Cache & Session Files
+# ---------------------
+*.cache
+sessions/*
+
+# Upload Directories
+# ------------------
+/public/uploads/
+/public/images/uploads/
+/storage/app/uploads/
+
+# Package Managers
+# ----------------
+# Composer
+composer.lock
+auth.json
+
+# NPM/Yarn
+package-lock.json
+yarn.lock
+.pnpm-lock.yaml
+
+# Documentation
+# -------------
+/docs/build/
+/_book/
+
+# Testing
+# -------
+.codeception/
+tests/_output/
+tests/_support/_generated
+
+# Laravel Sail
+# -------------
+docker-compose.override.yml
+
+# Laravel Homestead
+# ------------------
+Homestead.json
+Homestead.yaml
+.vagrant/
+
+# Custom Application Files
+# ------------------------
+# Add your custom files/folders here
+# /custom-uploads/
+# /temp-files/
