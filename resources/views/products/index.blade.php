@@ -1,72 +1,107 @@
 @extends('layouts.shop')
 
-@section('title', '상품 목록')
+@section('title', '전체 상품 - ANUTA SHOP')
 
 @section('content')
-<div class="container">
-    <h1 class="text-center mb-5">전체 상품</h1>
+<div class="anuta-container">
+    <h1 class="page-title">Products</h1>
     
-    <!-- 3x3 그리드 -->
-    <div class="row g-4">
+    <!-- 상품 그리드 -->
+    <div class="product-grid">
         @foreach($products as $product)
-            <div class="col-md-4">
-                <div class="card product-card h-100">
-                    <!-- 상품 이미지 -->
-                    <img src="{{ $product->image }}" class="card-img-top" alt="{{ $product->name }}" style="height: 250px; object-fit: cover;">
-                    
-                    <div class="card-body d-flex flex-column">
-                        <!-- 상품명 -->
-                        <h5 class="card-title">{{ $product->name }}</h5>
-                        
-                        <!-- 가격 -->
-                        <p class="card-text text-primary fw-bold fs-4">
-                            ₩{{ number_format($product->price) }}
-                        </p>
-                        
-                        <!-- 재고 상태 -->
-                        <p class="card-text">
-                            @if($product->stock > 0)
-                                <span class="badge bg-success">재고: {{ $product->stock }}개</span>
-                            @else
-                                <span class="badge bg-danger">품절</span>
-                            @endif
-                        </p>
-                        
-                        <!-- 버튼 그룹 -->
-                        <div class="mt-auto">
-                            <div class="d-grid gap-2">
-                                <!-- 상세보기 버튼 -->
-                                <a href="{{ route('products.show', $product->id) }}" class="btn btn-outline-primary">
-                                    <i class="fas fa-eye"></i> 상세보기
-                                </a>
-                                
-                                <!-- 장바구니 담기 버튼 -->
-                                @if($product->stock > 0)
-                                    <form action="{{ route('cart.add', $product->id) }}" method="POST">
-                                        @csrf
-                                        <button type="submit" class="btn btn-primary w-100">
-                                            <i class="fas fa-cart-plus"></i> 장바구니 담기
-                                        </button>
-                                    </form>
-                                @else
-                                    <button class="btn btn-secondary w-100" disabled>
-                                        <i class="fas fa-times"></i> 품절
-                                    </button>
-                                @endif
-                            </div>
+            <a href="{{ route('products.show', $product->id) }}" class="product-card">
+                <!-- 상품 이미지 -->
+                <div style="position: relative;">
+                    <img src="{{ $product->image }}" class="product-image" alt="{{ $product->name }}">
+                    @if($product->stock <= 0)
+                        <div style="position: absolute; top: 10px; left: 10px; background: rgba(0, 0, 0, 0.8); color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px;">
+                            품절
                         </div>
-                    </div>
+                    @endif
                 </div>
-            </div>
+                
+                <div class="product-info">
+                    <!-- 상품명 -->
+                    <h3 class="product-title">{{ $product->name }}</h3>
+                    
+                    <!-- 상품 설명 (있다면) -->
+                    @if(isset($product->description) && $product->description)
+                        <p class="product-description">
+                            {{ Str::limit($product->description, 100) }}
+                        </p>
+                    @endif
+                    
+                    <!-- 가격 -->
+                    <p class="product-price">
+                        ₩{{ number_format($product->price) }}
+                    </p>
+                    
+                    <!-- 재고 상태 -->
+                    @if($product->stock > 0 && $product->stock <= 5)
+                        <p style="color: var(--anuta-primary); font-size: 14px; margin-top: 8px;">
+                            재고 {{ $product->stock }}개 남음
+                        </p>
+                    @endif
+                </div>
+            </a>
         @endforeach
     </div>
     
     <!-- 상품이 없을 때 -->
     @if($products->isEmpty())
-        <div class="text-center py-5">
-            <i class="fas fa-box-open fa-5x text-muted mb-3"></i>
-            <h3 class="text-muted">등록된 상품이 없습니다.</h3>
+        <div style="text-align: center; padding: 80px 20px;">
+            <i class="fas fa-box-open" style="font-size: 80px; color: var(--anuta-text-light); margin-bottom: 20px; display: block;"></i>
+            <h3 style="color: var(--anuta-text-light); font-weight: 400;">등록된 상품이 없습니다.</h3>
         </div>
     @endif
 </div>
+
+<!-- 추가 스타일 -->
+<style>
+    /* 호버 효과 개선 */
+    .product-card {
+        display: block;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .product-card::after {
+        content: '상세보기';
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background: var(--anuta-primary);
+        color: white;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 500;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s;
+    }
+    
+    .product-card:hover::after {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .product-card:hover .product-image {
+        transform: scale(1.05);
+        transition: transform 0.3s;
+    }
+    
+    /* 반응형 그리드 개선 */
+    @media (max-width: 640px) {
+        .product-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .page-title {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+    }
+</style>
 @endsection
