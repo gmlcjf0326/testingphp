@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_admin',
     ];
 
     /**
@@ -52,5 +53,13 @@ class User extends Authenticatable
     public function cartItems()
     {
         return $this->hasMany(Cart::class);
+    }
+
+    /**
+     * 사용자가 관리자인지 확인
+     */
+    public function isAdmin()
+    {
+        return $this->is_admin;
     }
 }

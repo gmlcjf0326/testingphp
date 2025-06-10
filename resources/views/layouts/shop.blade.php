@@ -380,6 +380,13 @@
                                         <i class="fas fa-tachometer-alt"></i> 대시보드
                                     </a>
                                 </li>
+                                @if(Auth::user()->isAdmin())
+                                    <li>
+                                        <a href="{{ route('admin.dashboard') }}">
+                                            <i class="fas fa-cogs"></i> 관리자
+                                        </a>
+                                    </li>
+                                @endif
                                 <li>
                                     <a href="{{ route('profile.edit') }}">
                                         <i class="fas fa-user-cog"></i> 프로필

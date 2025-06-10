@@ -50,4 +50,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// 관리자 라우트
+Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
+    // 관리자 대시보드
+    Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+    
+    // 상품 관리
+    Route::resource('products', App\Http\Controllers\Admin\ProductController::class);
+});
+
 require __DIR__.'/auth.php';
