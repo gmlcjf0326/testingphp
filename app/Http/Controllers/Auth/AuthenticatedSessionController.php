@@ -32,7 +32,7 @@ class AuthenticatedSessionController extends Controller
         // 세션 장바구니를 DB로 동기화
         CartController::syncSessionToDatabase();
 
-        return redirect()->intended(route('products.index'));
+        return redirect()->intended(route('dashboard'));
     }
 
     /**

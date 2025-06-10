@@ -7,7 +7,7 @@
     <!-- 브레드크럼 -->
     <nav style="margin-bottom: 40px;">
         <ol style="list-style: none; display: flex; gap: 15px; font-size: 14px; color: var(--anuta-text-light);">
-            <li><a href="{{ route('products.index') }}" style="color: var(--anuta-text-light); text-decoration: none;">홈</a></li>
+            <li><a href="{{ route('shop.products.index') }}" style="color: var(--anuta-text-light); text-decoration: none;">홈</a></li>
             <li>/</li>
             <li style="color: var(--anuta-text);">{{ $product->name }}</li>
         </ol>
@@ -53,7 +53,7 @@
             
             <!-- 구매 버튼 -->
             @if($product->stock > 0)
-                <form action="{{ route('cart.add', $product->id) }}" method="POST" style="margin-bottom: 20px;">
+                <form action="{{ route('shop.cart.add', $product->id) }}" method="POST" style="margin-bottom: 20px;">
                     @csrf
                     <button type="submit" class="anuta-btn" style="width: 100%; padding: 15px; font-size: 18px;">
                         <i class="fas fa-cart-plus"></i> 장바구니 담기
@@ -94,7 +94,7 @@
     
     <!-- 뒤로가기 버튼 -->
     <div style="text-align: center; margin-top: 80px;">
-        <a href="{{ route('products.index') }}" class="anuta-btn-outline" style="padding: 12px 40px;">
+        <a href="{{ route('shop.products.index') }}" class="anuta-btn-outline" style="padding: 12px 40px;">
             <i class="fas fa-arrow-left"></i> 상품 목록으로 돌아가기
         </a>
     </div>

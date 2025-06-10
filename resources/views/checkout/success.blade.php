@@ -39,10 +39,10 @@
             @endif
             
             <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                <a href="{{ route('orders.show', $order->id) }}" class="anuta-btn" style="padding: 12px 30px;">
+                <a href="{{ route('shop.orders.show', $order->id) }}" class="anuta-btn" style="padding: 12px 30px;">
                     <i class="fas fa-box"></i> 주문 상세보기
                 </a>
-                <a href="{{ route('products.index') }}" class="anuta-btn-outline" style="padding: 12px 30px;">
+                <a href="{{ route('shop.products.index') }}" class="anuta-btn-outline" style="padding: 12px 30px;">
                     <i class="fas fa-shopping-bag"></i> 쇼핑 계속하기
                 </a>
             </div>

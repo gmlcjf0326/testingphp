@@ -10,7 +10,7 @@
         <p style="font-size: 20px; margin-bottom: 40px; opacity: 0.95; position: relative; z-index: 1;">
             특별한 쇼핑 경험을 제공하는 온라인 스토어
         </p>
-        <a href="{{ route('products.index') }}" class="anuta-btn" style="background: white; color: var(--anuta-primary); padding: 15px 40px; font-size: 18px; position: relative; z-index: 1;">
+        <a href="{{ route('shop.products.index') }}" class="anuta-btn" style="background: white; color: var(--anuta-primary); padding: 15px 40px; font-size: 18px; position: relative; z-index: 1;">
             <i class="fas fa-shopping-bag"></i> 쇼핑 시작하기
         </a>
     </section>
@@ -73,7 +73,7 @@
         @if($featuredProducts->count() > 0)
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 40px;">
                 @foreach($featuredProducts as $product)
-                    <a href="{{ route('products.show', $product->id) }}" class="product-card">
+                    <a href="{{ route('shop.products.show', $product->id) }}" class="product-card">
                         <img src="{{ $product->image }}" class="product-image" alt="{{ $product->name }}">
                         <div class="product-info">
                             <h3 class="product-title">{{ $product->name }}</h3>
@@ -84,7 +84,7 @@
             </div>
             
             <div style="text-align: center;">
-                <a href="{{ route('products.index') }}" class="anuta-btn-outline" style="padding: 12px 40px;">
+                <a href="{{ route('shop.products.index') }}" class="anuta-btn-outline" style="padding: 12px 40px;">
                     전체 상품 보기 <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
                 </a>
             </div>
@@ -112,7 +112,7 @@
                     <i class="fas fa-sign-in-alt"></i> 로그인
                 </a>
             @else
-                <a href="{{ route('products.index') }}" class="anuta-btn" style="padding: 12px 30px;">
+                <a href="{{ route('shop.products.index') }}" class="anuta-btn" style="padding: 12px 30px;">
                     <i class="fas fa-shopping-bag"></i> 쇼핑하기
                 </a>
                 <a href="{{ route('dashboard') }}" class="anuta-btn-outline" style="padding: 12px 30px;">

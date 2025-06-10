@@ -69,7 +69,7 @@
                           :class="sidebarOpen ? 'block' : 'hidden'">상품 관리</span>
                 </a>
                 
-                <a href="{{ route('products.index') }}" 
+                <a href="{{ route('shop.products.index') }}" 
                    class="flex items-center px-4 py-3 hover:bg-gray-700 transition-colors mt-8">
                     <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 

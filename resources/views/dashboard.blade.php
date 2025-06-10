@@ -52,14 +52,14 @@
                     </div>
                     
                     <div style="margin-top: 20px;">
-                        <a href="{{ route('cart.index') }}" class="anuta-btn" style="width: 100%;">
+                        <a href="{{ route('shop.cart.index') }}" class="anuta-btn" style="width: 100%;">
                             장바구니 보기
                         </a>
                     </div>
                 </div>
             @else
                 <p style="color: var(--anuta-text-light); margin-bottom: 20px;">장바구니가 비어있습니다.</p>
-                <a href="{{ route('products.index') }}" class="anuta-btn-outline" style="width: 100%;">
+                <a href="{{ route('shop.products.index') }}" class="anuta-btn-outline" style="width: 100%;">
                     쇼핑하러 가기
                 </a>
             @endif
@@ -121,7 +121,7 @@
                         </div>
                     @endforeach
                 </div>
-                <a href="{{ route('orders.index') }}" class="anuta-btn-outline" style="width: 100%;">
+                <a href="{{ route('shop.orders.index') }}" class="anuta-btn-outline" style="width: 100%;">
                     전체 주문 내역 보기
                 </a>
             @else
@@ -138,11 +138,11 @@
             </h3>
             
             <div style="display: flex; flex-direction: column; gap: 15px;">
-                <a href="{{ route('products.index') }}" style="display: flex; align-items: center; gap: 10px; color: var(--anuta-text); text-decoration: none; padding: 10px; border-radius: 4px; transition: all 0.3s;">
+                <a href="{{ route('shop.products.index') }}" style="display: flex; align-items: center; gap: 10px; color: var(--anuta-text); text-decoration: none; padding: 10px; border-radius: 4px; transition: all 0.3s;">
                     <i class="fas fa-chevron-right" style="color: var(--anuta-primary);"></i>
                     상품 둘러보기
                 </a>
-                <a href="{{ route('cart.index') }}" style="display: flex; align-items: center; gap: 10px; color: var(--anuta-text); text-decoration: none; padding: 10px; border-radius: 4px; transition: all 0.3s;">
+                <a href="{{ route('shop.cart.index') }}" style="display: flex; align-items: center; gap: 10px; color: var(--anuta-text); text-decoration: none; padding: 10px; border-radius: 4px; transition: all 0.3s;">
                     <i class="fas fa-chevron-right" style="color: var(--anuta-primary);"></i>
                     장바구니 보기
                 </a>

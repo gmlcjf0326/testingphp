@@ -46,8 +46,8 @@
     document.getElementById('payment-button').addEventListener('click', function() {
         const orderId = '{{ $order->order_number }}';
         const orderName = '{{ $order->order_number }} 주문';
-        const successUrl = '{{ route("checkout.success") }}';
-        const failUrl = '{{ route("checkout.fail") }}';
+        const successUrl = '{{ route("shop.checkout.success") }}';
+        const failUrl = '{{ route("shop.checkout.fail") }}';
         
         tossPayments.requestPayment('카드', {
             amount: {{ $totalAmount }},

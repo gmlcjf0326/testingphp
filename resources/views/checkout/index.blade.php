@@ -12,7 +12,7 @@
             <div style="background: white; border-radius: 8px; padding: 40px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);">
                 <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 30px; color: var(--anuta-text);">배송 정보</h3>
                 
-                <form action="{{ route('checkout.process') }}" method="POST" id="checkoutForm">
+                <form action="{{ route('shop.checkout.process') }}" method="POST" id="checkoutForm">
                     @csrf
                     
                     <div style="margin-bottom: 25px;">

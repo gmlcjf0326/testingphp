@@ -23,10 +23,10 @@
             @endif
             
             <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px;">
-                <a href="{{ route('cart.index') }}" class="anuta-btn" style="padding: 12px 30px;">
+                <a href="{{ route('shop.cart.index') }}" class="anuta-btn" style="padding: 12px 30px;">
                     <i class="fas fa-shopping-cart"></i> 장바구니로 돌아가기
                 </a>
-                <a href="{{ route('products.index') }}" class="anuta-btn-outline" style="padding: 12px 30px;">
+                <a href="{{ route('shop.products.index') }}" class="anuta-btn-outline" style="padding: 12px 30px;">
                     <i class="fas fa-home"></i> 홈으로
                 </a>
             </div>

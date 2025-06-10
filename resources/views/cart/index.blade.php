@@ -31,7 +31,7 @@
                             
                             <!-- 상품명 -->
                             <td style="padding: 20px 10px;">
-                                <a href="{{ route('products.show', $id) }}" 
+                                <a href="{{ route('shop.products.show', $id) }}" 
                                    style="color: var(--anuta-text); text-decoration: none; font-weight: 500; transition: color 0.3s;">
                                     {{ $item['name'] }}
                                 </a>
@@ -54,7 +54,7 @@
                             
                             <!-- 삭제 버튼 -->
                             <td style="padding: 20px 10px; text-align: center;">
-                                <form action="{{ route('cart.remove', $id) }}" method="POST" style="display: inline;">
+                                <form action="{{ route('shop.cart.remove', $id) }}" method="POST" style="display: inline;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" 
@@ -83,11 +83,11 @@
         <!-- 버튼 그룹 -->
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; flex-wrap: wrap; gap: 20px;">
             <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                <a href="{{ route('products.index') }}" class="anuta-btn-outline">
+                <a href="{{ route('shop.products.index') }}" class="anuta-btn-outline">
                     <i class="fas fa-arrow-left"></i> 쇼핑 계속하기
                 </a>
                 
-                <form action="{{ route('cart.clear') }}" method="POST" style="display: inline;">
+                <form action="{{ route('shop.cart.clear') }}" method="POST" style="display: inline;">
                     @csrf
                     @method('DELETE')
                     <button type="submit" 
@@ -101,7 +101,7 @@
             
             <div>
                 @auth
-                    <a href="{{ route('checkout.index') }}" class="anuta-btn" style="padding: 15px 40px; font-size: 18px;">
+                    <a href="{{ route('shop.checkout.index') }}" class="anuta-btn" style="padding: 15px 40px; font-size: 18px;">
                         <i class="fas fa-credit-card"></i> 결제하기
                     </a>
                 @else
@@ -117,7 +117,7 @@
             <i class="fas fa-shopping-cart" style="font-size: 80px; color: var(--anuta-text-light); margin-bottom: 20px; display: block;"></i>
             <h3 style="color: var(--anuta-text); font-weight: 400; margin-bottom: 10px;">장바구니가 비어있습니다.</h3>
             <p style="color: var(--anuta-text-light); margin-bottom: 30px;">원하시는 상품을 장바구니에 담아보세요!</p>
-            <a href="{{ route('products.index') }}" class="anuta-btn">
+            <a href="{{ route('shop.products.index') }}" class="anuta-btn">
                 <i class="fas fa-shopping-bag"></i> 쇼핑하러 가기
             </a>
         </div>

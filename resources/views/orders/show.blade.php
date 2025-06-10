@@ -7,9 +7,9 @@
     <!-- 브레드크럼 -->
     <nav style="margin-bottom: 40px;">
         <ol style="list-style: none; display: flex; gap: 15px; font-size: 14px; color: var(--anuta-text-light);">
-            <li><a href="{{ route('products.index') }}" style="color: var(--anuta-text-light); text-decoration: none;">홈</a></li>
+            <li><a href="{{ route('shop.products.index') }}" style="color: var(--anuta-text-light); text-decoration: none;">홈</a></li>
             <li>/</li>
-            <li><a href="{{ route('orders.index') }}" style="color: var(--anuta-text-light); text-decoration: none;">주문 내역</a></li>
+            <li><a href="{{ route('shop.orders.index') }}" style="color: var(--anuta-text-light); text-decoration: none;">주문 내역</a></li>
             <li>/</li>
             <li style="color: var(--anuta-text);">{{ $order->order_number }}</li>
         </ol>
@@ -111,7 +111,7 @@
                         @foreach($order->orderItems as $item)
                             <tr style="border-bottom: 1px solid var(--anuta-border);">
                                 <td style="padding: 15px 10px;">
-                                    <a href="{{ route('products.show', $item->product_id) }}" 
+                                    <a href="{{ route('shop.products.show', $item->product_id) }}" 
                                        style="color: var(--anuta-text); text-decoration: none; font-weight: 500; transition: color 0.3s;">
                                         {{ $item->product->name }}
                                     </a>
@@ -201,10 +201,10 @@
             
             <!-- 주문 작업 -->
             <div style="background: white; border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);">
-                <a href="{{ route('orders.index') }}" class="anuta-btn-outline" style="width: 100%; text-align: center; margin-bottom: 10px;">
+                <a href="{{ route('shop.orders.index') }}" class="anuta-btn-outline" style="width: 100%; text-align: center; margin-bottom: 10px;">
                     <i class="fas fa-list"></i> 주문 목록
                 </a>
-                <a href="{{ route('products.index') }}" class="anuta-btn" style="width: 100%; text-align: center;">
+                <a href="{{ route('shop.products.index') }}" class="anuta-btn" style="width: 100%; text-align: center;">
                     <i class="fas fa-shopping-bag"></i> 쇼핑 계속하기
                 </a>
             </div>

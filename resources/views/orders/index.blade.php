@@ -93,7 +93,7 @@
                                 <p style="font-size: 24px; font-weight: 700; color: var(--anuta-primary); margin-bottom: 20px;">
                                     ₩{{ number_format($order->total_amount) }}
                                 </p>
-                                <a href="{{ route('orders.show', $order->id) }}" class="anuta-btn-outline" style="padding: 10px 25px;">
+                                <a href="{{ route('shop.orders.show', $order->id) }}" class="anuta-btn-outline" style="padding: 10px 25px;">
                                     <i class="fas fa-eye"></i> 상세보기
                                 </a>
                             </div>
@@ -114,7 +114,7 @@
             <i class="fas fa-box-open" style="font-size: 80px; color: var(--anuta-text-light); margin-bottom: 20px; display: block;"></i>
             <h3 style="color: var(--anuta-text); font-weight: 400; margin-bottom: 10px;">주문 내역이 없습니다.</h3>
             <p style="color: var(--anuta-text-light); margin-bottom: 30px;">첫 주문을 해보세요!</p>
-            <a href="{{ route('products.index') }}" class="anuta-btn">
+            <a href="{{ route('shop.products.index') }}" class="anuta-btn">
                 <i class="fas fa-shopping-bag"></i> 쇼핑하러 가기
             </a>
         </div>

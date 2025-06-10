@@ -337,7 +337,7 @@
     <header class="anuta-header">
         <div class="anuta-container">
             <nav class="anuta-nav">
-                <a href="{{ route('products.index') }}" class="anuta-logo">
+                <a href="{{ route('shop.products.index') }}" class="anuta-logo">
                     ANUTA SHOP
                 </a>
                 
@@ -347,12 +347,17 @@
                 
                 <ul class="anuta-nav-menu" id="navMenu">
                     <li>
-                        <a href="{{ route('products.index') }}" class="anuta-nav-link">
-                            홈
+                        <a href="{{ route('home') }}" class="anuta-nav-link">
+                            <i class="fas fa-arrow-left"></i> 뮤지토리 홈
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('cart.index') }}" class="anuta-nav-link" style="position: relative;">
+                        <a href="{{ route('shop.products.index') }}" class="anuta-nav-link">
+                            쇼핑몰 홈
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('shop.cart.index') }}" class="anuta-nav-link" style="position: relative;">
                             <i class="fas fa-shopping-cart"></i> 장바구니
                             @php
                                 $cartCount = 0;
@@ -456,8 +461,8 @@
                 <div class="footer-section">
                     <h3>빠른 링크</h3>
                     <ul>
-                        <li><a href="{{ route('products.index') }}">전체 상품</a></li>
-                        <li><a href="{{ route('cart.index') }}">장바구니</a></li>
+                        <li><a href="{{ route('shop.products.index') }}">전체 상품</a></li>
+                        <li><a href="{{ route('shop.cart.index') }}">장바구니</a></li>
                         @auth
                             <li><a href="{{ route('dashboard') }}">마이페이지</a></li>
                         @else

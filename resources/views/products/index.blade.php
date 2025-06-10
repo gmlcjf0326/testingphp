@@ -9,7 +9,7 @@
     <!-- 상품 그리드 -->
     <div class="product-grid">
         @foreach($products as $product)
-            <a href="{{ route('products.show', $product->id) }}" class="product-card">
+            <a href="{{ route('shop.products.show', $product->id) }}" class="product-card">
                 <!-- 상품 이미지 -->
                 <div style="position: relative;">
                     <img src="{{ $product->image }}" class="product-image" alt="{{ $product->name }}">

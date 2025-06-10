@@ -20,9 +20,14 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
-        // ProductSeeder 실행
+        // 시더 실행
         $this->call([
             ProductSeeder::class,
+            ProgramSeeder::class,
+            TeacherSeeder::class,
+            ReviewSeeder::class,
+            AdminUserSeeder::class,
+            TeacherScheduleSeeder::class,
         ]);
     }
 }
